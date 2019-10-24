@@ -21,6 +21,8 @@ var drawModule = (function () {
     ctx.fillText(score_text, 145, h-5);
   }
 
+  // Makes a score in the bottom middle of the canvas
+
   var drawSnake = function() {
       var length = 4;
       snake = [];
@@ -48,7 +50,7 @@ var drawModule = (function () {
         snakeY--;
       } else if(direction == 'down') {
         snakeY++; }
-
+        // Checks if the snake hits the wall
       if (snakeX == -1 || snakeX == w/snakeSize || snakeY == -1 || snakeY == h/snakeSize || checkCollision(snakeX, snakeY, snake)) {
           //restart game
           btn.removeAttribute('disabled', true);
@@ -96,7 +98,7 @@ var drawModule = (function () {
         }
       }
   }
-
+  // Checks if the snake hits itself
   var checkCollision = function(x, y, array) {
       for(var i = 0; i < array.length; i++) {
         if(array[i].x === x && array[i].y === y)

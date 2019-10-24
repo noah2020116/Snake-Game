@@ -39,6 +39,7 @@ btn.addEventListener("click", function(){ drawModule.init();});
           break;
           }
 					// Moves the snake to the down
+					 event.preventDefault();
       }
 
 
